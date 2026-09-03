@@ -453,7 +453,7 @@ function renderGuas() {
     if (filter.only === "todo" && isDone(h.n)) return false;
     if (filter.tri && h.up !== filter.tri && h.dn !== filter.tri) return false;
     if (!q) return true;
-    return (h.name + h.full + h.py + h.gua + h.yi + String(h.n)).includes(q);
+    return (h.name + h.full + h.py + h.gua + h.yi + String(h.n) + (h.gua_bai||"") + h.yao.map(y=> (y.text||"")+(y.trans||"")+(y.explain||"")).join("")).includes(q);
   });
   $("view-guas").innerHTML = `
     <div class="toolbar">
